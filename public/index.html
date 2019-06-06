@@ -4,11 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>CS193x Final Project</title>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <script src="/js/script.js" defer></script>
-    </script>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- TODO(you): Add the HTML necessary to complete your final project. -->
+    <aside>
+      <h1 class="title">Final Project</h1>
+      <h1 class="title">點餐系統</h1>
+      <article class="option-group">
+        <h2 class="option active">劃位</h2>
+        <h2 class="option">點餐</h2>
+        <h2 class="option">結帳</h2>
+      </article>
+      <form class="login">
+        <section class="form-gruop">
+          <label>Username</label>
+          <input class="login-input" type="text" placeholder="Username" value="admin">
+        </section>
+        <section class="form-gruop">
+          <label>Password</label>
+          <input class="login-input" type="password" placeholder="Password" value="admin">
+        </section>
+        <button type="submit" disabled>Login</button>
+      </form>
+    </aside>
+    <main></main>
+    <script src="./js/script.js" defer></script>
   </body>
 </html>

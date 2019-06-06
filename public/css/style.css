@@ -1,3 +1,80 @@
 /**
  * TODO(you): Add the CSS necessary to complete your final project.
  **/
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, div {
+  text-align: center;
+  margin: 0;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.17rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: .83rem; }
+h6 { font-size: .67rem; }
+
+.title {
+  color: #f8f9fa;
+  line-height: 50px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.option-group {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.option {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #28a745;
+  cursor: pointer;
+}
+
+.active {
+  filter: brightness(150%);
+}
+
+.login {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-gruop {
+  margin: 10px auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-input {
+  width: 100px;
+}
+
+aside {
+  width: 300px;
+  height: 100%;
+  background: #28a745;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgb(255, 215, 106);
+}

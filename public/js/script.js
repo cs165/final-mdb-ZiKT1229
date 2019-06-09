@@ -33,6 +33,17 @@ class App {
         console.log('exit sucess');
       });
     });
+
+    document.getElementsByClassName('checkout')[0].addEventListener('click', () => {
+      const foodList = document.getElementsByClassName('food');
+      let sum = 0;
+      Array.from(foodList).forEach((food, index) => {
+        const price = parseInt(document.getElementsByClassName('food-price')[index].textContent);
+        const count = parseInt(document.getElementsByClassName('food-count')[index].value);
+        sum += (price * count);
+      });
+      console.log(`Total: ${sum} NTD`);
+    });
   }
 }
 

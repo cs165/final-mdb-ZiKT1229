@@ -11,12 +11,12 @@
     <!-- TODO(you): Add the HTML necessary to complete your final project. -->
     <aside>
       <h1 class="title">Final Project</h1>
-      <h1 class="title">點餐系統</h1>
+      <h1 class="title">點餐系統 POS</h1>
       <article class="option-group">
-        <h2 class="option active">劃位</h2>
-        <h2 class="option">點餐</h2>
-        <h2 class="option">結帳</h2>
+        <h2 class="option active">Menu</h2>
+        <h2 class="option">Checkout</h2>
       </article>
+      <!--todo: login-->
       <form class="login">
         <section class="form-gruop">
           <label>Username</label>
@@ -28,8 +28,55 @@
         </section>
         <button type="submit" disabled>Login</button>
       </form>
+      <button class="add-btn">Add Food</button>
     </aside>
-    <main></main>
+    <main id="container">
+      <form class="form-customer">
+        <section class="form-gruop">
+          <label>Name:</label>
+          <input type="text" placeholder="Customer name">
+        </section>
+        <section class="form-gruop">
+          <label>Time:</label>
+          <input type="time" min="18:00" max="20:00" value="18:00">
+        </section>
+        <section class="form-gruop">
+          <label>Number:</label>
+          <input type="number" min="1" max="8" placeholder="人數">
+        </section>
+      </form>
+      <article class="menu">
+      </article>
+      <button class="checkout" type="submit">Checkout</button>
+    </main>
+    <template id="food">
+      <section class="food">
+        <img class="food-img" src="" alt="">
+        <p class="food-name"></p>
+        <p class="food-price"></p>
+        <input type="number" min="0" max="8" value="0">
+      </section>
+    </template>
+    <template id="add">
+      <form class="add-screen">
+        <section class="form-gruop">
+          <label>Food name:</label>
+          <input id="food-name" type="text" placeholder="Please input Food name">
+        </section>
+        <section class="form-gruop">
+          <label>Food image:</label>
+          <input id="food-img" type="text" placeholder="Please input image src">
+        </section>
+        <section class="form-gruop">
+          <label>Food price:</label>
+          <input id="food-price" type="number" min="0" value="0">
+        </section>
+        <section class="form-gruop">
+          <button id="add-btn" class="checkout" type="submit">Add</button>
+          <button id="exit-btn" class="checkout" type="submit">Exit</button>
+        </section>
+      </form>
+    </template>
     <script src="./js/script.js" defer></script>
   </body>
 </html>

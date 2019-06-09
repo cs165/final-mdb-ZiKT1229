@@ -7,6 +7,10 @@ body {
   display: flex;
 }
 
+p {
+  font-family: 'Pacifico', cursive;
+}
+
 h1, h2, h3, h4, h5, h6, p, span, div {
   text-align: center;
   margin: 0;

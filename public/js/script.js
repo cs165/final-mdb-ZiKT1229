@@ -23,6 +23,7 @@ class App {
         data['food-name'] = document.getElementById('food-name').value;
         data['food-img'] = document.getElementById('food-img').value;
         data['food-price'] = document.getElementById('food-price').value;
+        data['food-type'] = document.getElementById('food-type').value;
         this.fetchApi.postData(data);
         document.body.removeChild(target);
         console.log('add sucess');
@@ -43,30 +44,35 @@ class App {
         sum += (price * count);
       });
       console.log(`Total: ${sum} NTD`);
+      alert(`Total: ${sum} NTD`);
     });
   }
 }
 
 class Menu {
   constructor() {
-    this.menu = document.getElementsByClassName('menu')[0];
+    this.menu = document.getElementsByClassName('type');
     this.foodTemplate = document.getElementById('food');
     this.render = this.render.bind(this);
   }
 
   render(data) {
     data.forEach((food, index) => {
-      const foodName = document.getElementsByClassName('food-name')[index];
-      const foodImg = document.getElementsByClassName('food-img')[index];
-      const foodPrice = document.getElementsByClassName('food-price')[index];
-
-      foodName.textContent = food['food-name'];
-      foodImg.src = food['food-img'];
-      foodPrice.textContent = food['food-price'];
+      const tmp = this.$create('section', { class: 'food' });
+      const foodImg = this.$create('img', { class: 'food-img', src: food['food-img'] });
+      const foodName = this.$create('p', { class: 'food-name' }, food['food-name']);
+      const foodPrice = this.$create('p', { class: 'food-price' }, food['food-price']);
+      const count = this.$create('input', { class: 'food-count', type: 'number', min: '0', value: '0' });
+      const foodType = parseInt(food['food-type'] || 0);
+      tmp.appendChild(foodImg);
+      tmp.appendChild(foodName);
+      tmp.appendChild(foodPrice);
+      tmp.appendChild(count);
+      this.menu[foodType].appendChild(tmp);
     });
   }
 
-  $create = (tag = 'div', attrs = {}, text = '') => {
+  $create(tag = 'div', attrs = {}, text = '') {
     const node = document.createElement(tag);
     Object.keys(attrs).forEach((name) => {
       node.setAttribute(name, attrs[name]);

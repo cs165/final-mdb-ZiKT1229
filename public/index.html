@@ -47,19 +47,29 @@
           <input type="number" min="1" max="8" placeholder="人數">
         </section>
       </form>
-      <article class="menu"></article>
+      <article class="menu">
+        <h1>Appetizer 前菜</h1>
+        <section class="type"></section>
+        <h1>Main course 主菜</h1>
+        <section class="type"></section>
+        <h1>Dessert 點心</h1>
+        <section class="type"></section>
+        <h1>Beverage 飲料</h1>
+        <section class="type"></section>
+      </article>
       <button class="checkout" type="submit">Checkout</button>
     </main>
-    <template id="food">
-      <section class="food">
-        <img class="food-img" src="" alt="">
-        <p class="food-name"></p>
-        <p class="food-price"></p>
-        <input class="food-count" type="number" min="0" max="8" value="0">
-      </section>
-    </template>
     <template id="add">
       <form class="add-screen">
+        <h1>注意，請遵守以下規則:</h1>
+        <h1>1. Food type 為 0 ~ 3</h1>
+        <h1>2. 圖片來源自己找，合法就好。</h1>
+        <h1>3. 別打錯內容，確定了就按下 ADD</h1>
+        <h1>4. 重新整理後就能看到你新增的食物了</h1>
+        <section class="form-gruop">
+          <label>Food type:</label>
+          <input id="food-type" type="text" placeholder="Please input Food type">
+        </section>
         <section class="form-gruop">
           <label>Food name:</label>
           <input id="food-name" type="text" placeholder="Please input Food name">

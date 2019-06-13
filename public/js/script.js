@@ -55,13 +55,7 @@ class Menu {
   }
 
   render(data) {
-    while (this.menu.firstChild) {
-      this.menu.removeChild(this.menu.firstChild);
-    }
-
     data.forEach((food, index) => {
-      const template = document.importNode(this.foodTemplate.content, true);
-      this.menu.appendChild(template);
       const foodName = document.getElementsByClassName('food-name')[index];
       const foodImg = document.getElementsByClassName('food-img')[index];
       const foodPrice = document.getElementsByClassName('food-price')[index];
@@ -70,6 +64,15 @@ class Menu {
       foodImg.src = food['food-img'];
       foodPrice.textContent = food['food-price'];
     });
+  }
+
+  $create = (tag = 'div', attrs = {}, text = '') => {
+    const node = document.createElement(tag);
+    Object.keys(attrs).forEach((name) => {
+      node.setAttribute(name, attrs[name]);
+    });
+    node.textContent = text;
+    return node;
   }
 }
 
